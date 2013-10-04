@@ -14,17 +14,32 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content" style="margin-top:-21px;">
 		<div id="content" role="main">
-			<div>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'content', 'page' ); ?>
-				<?php endwhile; // end of the loop. ?>
-				
+			<div id="carousel">
+				<?php 
+				$args = array('tag' =>'carousel', 'orderby' =>'title', 'order'=>'ASC');
+				$thequery = get_posts($args);
+				foreach ( $thequery as $post ) :setup_postdata($post);
+					echo '<div>'.get_the_content().'</div>';
+			 	endforeach;// end of the loop. ?>
 			</div>
-
+			<div id="prev" class="slidenav"><img src="wp-content/themes/monarch/images/leftarrow.png"></div>
+			<div id="next" class="slidenav"><img src="wp-content/themes/monarch/images/rightarrow.png"></div>
+			<div id="pager" class="slidenav"></div>
+			<br>
+			<div id="featured">
+			<?php 
+				$args = array('tag' =>'featured', 'orderby' =>'title', 'order'=>'ASC');
+				$thequery = get_posts($args);
+				foreach ( $thequery as $post ) :setup_postdata($post);
+					echo '<div class="featureslide">'.get_the_content().'</div>';
+			 	endforeach;// end of the loop. ?>
+			</div>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+			<?php endwhile; // end of the loop. ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
-
 <?php get_sidebar( 'front' ); ?>
 <?php get_footer(); ?>

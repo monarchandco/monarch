@@ -173,6 +173,15 @@ img {
 /* =Repeatable patterns
 -------------------------------------------------------------- */
 
+/* Colors */
+.orangebg {
+	background: rgb(255,153,51);
+}
+
+.orange {
+	color: rgb(255,153,51);
+}
+
 /* Small headers */
 .archive-title,
 .page-title,
@@ -518,13 +527,20 @@ a:hover {
 
 /* Page structure */
 .site {
-	padding: 0 24px;
-	padding: 0 1.714285714rem;
+	/*padding: 0 24px;*/
+	/*padding: 0 1.714285714rem;*/
 	background-color: #fff;
 }
+
+.inner {
+	padding: 0 24px;
+	padding: 0 1.714285714rem;
+}
+
 .site-content {
 	margin: 24px 0 0;
 	margin: 1.714285714rem 0 0;
+	width: 100%;
 }
 .widget-area {
 	margin: 24px 0 0;
@@ -539,9 +555,7 @@ hgroup{
 }
 
 .site-header {
-	padding: 24px 0;
-	padding: 1.714285714rem 0;
-	margin: -24px -42px 0 -42px;
+	/*padding: 24px 13px 0 13px;*/
 }
 .site-header h1,
 .site-header h2 {
@@ -1353,6 +1367,160 @@ a.comment-edit-link:hover {
 	margin: 0.571428571rem 1.714285714rem 0.571428571rem 0;
 }
 
+#carousel {
+	margin: 0 auto;
+	width: 100% !important;
+}
+
+#carousel div{
+	width: 100%;
+
+}
+#carousel img{
+	width: 100%;
+
+}
+
+.slidenav {
+	display: inline-block;
+	position: relative;
+	padding: 30px;
+	z-index: 999;
+}
+
+#next {
+	margin-top: -210px;
+	float:right;
+}
+
+#prev {
+	margin-top: -210px;
+	float: left;
+}
+
+#pager {
+	float: right;
+	margin: -70px 100px 0 0;
+}
+
+#pager a{
+	border:1px black solid;
+	height: 15px;
+	width: 15px;
+	margin-right:5px;
+	display: inline-block;
+	text-decoration: none;
+	text-indent: 20000000000px;
+	background: white;
+	border-radius: 200px;
+}
+
+#pager a.activeSlide, #pager a:hover {
+	background: rgb(255,153,51);
+}
+
+
+.slideheadline {
+	margin: -134px 0px 0px 0px;
+	width: 100%;
+	height: 92px;
+	z-index: 999;
+	position: relative;
+	background: rgba(125,125,125,.5);
+	padding: 20px;
+	color: white;
+}
+
+#featured {
+	text-align: center;
+}
+
+.featureslide {
+	background: #fd9840; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fd9840 0%, #fd7a2a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fd9840), color-stop(100%,#fd7a2a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fd9840 0%,#fd7a2a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fd9840 0%,#fd7a2a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fd9840 0%,#fd7a2a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fd9840 0%,#fd7a2a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9840', endColorstr='#fd7a2a',GradientType=0 ); /* IE6-9 */
+	max-width: 253px;
+	height: 353px;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	color: white;
+	display: inline-block;
+	margin-left: 30px;
+	width: 17%;
+}
+
+.featureslide img {
+	height: 117px;
+}
+
+.featureslide h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.featureslide a {
+	margin: 75px 0 0 34px;
+	position: absolute;
+	color: white;
+	text-decoration: none;
+}
+
+.featureslide a:hover {
+	text-decoration: underline;
+}
+
+/* Our Work Template */
+
+.ourworkeach {
+	width: 481px;
+	height: 356px;
+	padding-right:20px;
+	display: inline-block;
+}
+.ourworkeach img {
+	height: 356px;
+	width: 481px;
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray; /* IE 6-9 */
+}
+
+.ourworkeach img:hover {
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	filter: grayscale(0%);
+	filter: none; /* IE 6-9 */
+}
+
+
+.overlay {
+	background: rgba(255,153,51, .5);
+	display: inline-table;
+	width: 481px;
+	text-align: center;
+	margin-top: -26px;
+	padding: 5px 0 5px 0;
+	border-radius: 0px 0px 2px 2px;
+	z-index: 999;
+	position: relative;
+}
+
+.overlay .link {
+	color: white;
+	text-decoration: none;
+}
+
 
 /* =Widgets
 -------------------------------------------------------------- */
@@ -1486,6 +1654,7 @@ img#wpstats {
 	.main-navigation li a {
 		border-bottom: 0;
 		color: #6a6a6a;
+		text-align: center;
 		line-height: 3.692307692;
 		text-transform: uppercase;
 		white-space: nowrap;
@@ -1617,8 +1786,8 @@ img#wpstats {
 		background-color: #e6e6e6;
 	}
 	body .site {
-		padding: 0 40px;
-		padding: 0 2.857142857rem;
+		/*padding: 0 40px;*/
+		/*padding: 0 2.857142857rem;*/
 		/*margin-top: 48px;*/
 		/*margin-top: 3.428571429rem;*/
 		/*margin-bottom: 48px;*/

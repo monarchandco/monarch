@@ -1272,7 +1272,8 @@ function wp_welcome_panel() {
 		<h4><?php _e( 'Next Steps' ); ?></h4>
 		<ul>
 		<?php if ( 'page' == get_option( 'show_on_front' ) && ! get_option( 'page_for_posts' ) ) : ?>
-			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page content' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page carousel' ) . '</a>', '/wp-admin/edit.php?tag=carousel' ); ?></li>
 			<li><?php printf( '<a href="%s" class="welcome-icon welcome-add-page">' . __( 'Add additional pages' ) . '</a>', admin_url( 'post-new.php?post_type=page' ) ); ?></li>
 		<?php elseif ( 'page' == get_option( 'show_on_front' ) ) : ?>
 			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
