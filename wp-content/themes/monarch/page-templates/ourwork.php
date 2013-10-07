@@ -18,9 +18,6 @@ get_header(); ?>
 		<div id="content" role="main">
 			<div id="ourwork">
 				<!-- <h3>Our Work</h3> -->
-			<?php //while ( have_posts() ) : the_post(); ?>
-				<?php// get_template_part( 'content', 'page' ); ?>
-			<?php //endwhile; // end of the loop. ?>
 				<?php $my_query = new WP_Query('category_name=work&posts_per_page=20');
 				  while ($my_query->have_posts()) : $my_query->the_post();
 				  	$do_not_duplicate[] = $post->ID;
@@ -28,8 +25,14 @@ get_header(); ?>
 					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					echo "<a  href='".get_permalink()."'>" .  get_the_post_thumbnail() ."</a>";
 					} 
-				  	echo "<span class='overlay'><a class='link' href='".get_permalink()."'>".get_the_title()."</a></span></div>";
+				  	// echo "<span class='overlay'><a class='link' href='".get_permalink()."'>".get_the_title()."</a></span></div>";
+				  	echo "<span class='overlay'>".get_the_title()."</span></div>";
 				  endwhile; ?>
+				  <div id="logos">
+					<?php while ( have_posts() ) : the_post(); ?>
+						<?php the_content(); ?>
+					<?php endwhile; // end of the loop. ?>
+				  <div>
 			</div>
 
 		</div><!-- #content -->

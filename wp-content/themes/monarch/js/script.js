@@ -7,5 +7,11 @@ $(document).ready(function(){
 		prev: '#prev',
 		pager:  '#pager' 
 	});
+	$('#mla_gallery-1 ').cycle({
+		fx: 'scrollHorz',
+		next: '#next',
+		prev: '#prev',
+		pager:  '#pager' 
+	});
 
 });
