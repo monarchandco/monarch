@@ -448,3 +448,28 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+function script_loader(){
+wp_enqueue_script( 'function', '/wp-content/themes/monarch/js/ajax.js', array('jquery'), true);
+wp_localize_script( 'function', 'ajax_runner', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+}
+
+add_action('template_redirect', 'script_loader');
+
+function run_content()
+{
+	$search = $_POST['search'];
+	$page = get_posts( array( 'name' => $search ) );
+	if ($page)
+	{	
+		$return = array();
+		$return[0]=$page[0]->post_title;
+		$return[1]=$page[0]->post_content;
+		$return[2]=get_the_post_thumbnail($page[0]->ID, 'large'); 
+		echo json_encode($return);
+	}
+    die();
+}
+
+add_action("wp_ajax_run_content", "run_content");
+add_action("wp_ajax_nopriv_run_content", "run_content");
