@@ -32,6 +32,10 @@
 <?php wp_head(); ?>
 <script src='<?php echo get_template_directory_uri();?>/js/jquery.cycle.all.js'></script>
 <script src="<?php echo get_template_directory_uri();?>/js/script.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body <?php body_class(); ?>>

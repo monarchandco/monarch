@@ -19,18 +19,25 @@ get_header(); ?>
 			<div id="solutions">
 				<div id="featuredimage" style="background: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( 11, 'full' ), 'single-post-thumbnail' )[0]; ?>) center; ">
 				</div>
-				<h3><?php the_title(); ?></h3>
-				<div class="solutionseach">
-					 <img src="/wp-content/themes/monarch/images/solutions_branded_merch.png">
+				<div id="reanimator">
+					<h3 class="orangebg headlinebar"><?php the_title(); ?></h3>
+					<div class="hiddenpage orangebg">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php the_content();?>
+						<?php endwhile; // end of the loop. ?>
+					</div>
 				</div>
 				<div class="solutionseach">
-					 <img src="/wp-content/themes/monarch/images/solutions_corporate_apparel.png">
+					 <a href="/branded-merchandise"><img src="/wp-content/themes/monarch/images/solutions_branded_merch.png"></a>
 				</div>
 				<div class="solutionseach">
-					 <img src="/wp-content/themes/monarch/images/solutions_printing_services.png">
+					 <a href="/corporate-apparel"> <img src="/wp-content/themes/monarch/images/solutions_corporate_apparel.png"></a>
 				</div>
 				<div class="solutionseach">
-					 <img src="/wp-content/themes/monarch/images/solutions_graphic_design.png">
+					  <a href="/printing-services"><img src="/wp-content/themes/monarch/images/solutions_printing_services.png"></a>
+				</div>
+				<div class="solutionseach">
+					 <a href="/graphic-design"> <img src="/wp-content/themes/monarch/images/solutions_graphic_design.png"></a>	
 				</div>
 			</div>
 

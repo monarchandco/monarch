@@ -16,7 +16,7 @@ get_header(); ?>
 	<div id="primary" class="inner site-content">
 		<div id="content" role="main">
 			<div id="ourwork">
-				<!-- <h3>Our Work</h3> -->
+				<h3 class="orange headlinebar">Our Work</h3>
 				<div id="ourwork-content"> <div id="closer"><img src="/wp-content/themes/monarch/images/close.png" /></div> <div class="image"></div>  <div class="right"><h2 class="header orange"></h2>  <div class="lightbox"></div></div></div>
 				<?php $my_query = new WP_Query('category_name=work&posts_per_page=20');
 				  while ($my_query->have_posts()) : $my_query->the_post();
